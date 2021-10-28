@@ -14,14 +14,15 @@ Methods:
 */
 function videoPlay(id) {
     const videoURL = "https://wwww.yourdomain.com/" + id;
-    console.log("Playing video from" + videoPlay)
+    console.log("Playing video from " + videoURL)
 }
 
 function videoStop(id) {
     const videoURL = "https://wwww.yourdomain.com/" + id;
-    console.log("The video from url" + videoPlay + "stopped")
+    console.log("The video from url " + videoURL + "stopped")
 }
-class PlatformClass {
+
+export class PlatformClass {
 
     constructor({
         name,
@@ -42,7 +43,7 @@ class PlatformClass {
 
 class Course {
 
-    #name; // ES2020 way to declarate a private property https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields
+    //#name; // ES2020 way to declarate a private property https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields
 
     constructor({
         id,
@@ -55,7 +56,7 @@ class Course {
     }) {
         this.id = id;
         // this._name = name; // Older way to make "private" a property
-        this.#name = name;
+        this._name = name;
         this.teacher = teacher;
         this.blogPost = blogPost;
         this.questions = questions;
@@ -65,14 +66,14 @@ class Course {
 
     get name() {
         // return this._name;
-        return this.#name;
+        return this._name;
     }
     set name(newName) {
         if (newName === "Curso Malito") {
             console.error('Web ... no');
         } else {
             // this._name = newName;
-            this.#name = newName;
+            this._name = newName;
         } 
     }
 
@@ -133,13 +134,13 @@ class Student {
 
 
 const cursoDefinitivoHtmlCSS = new Course ({
-    id: 01,
+    id: 1,
     name: "Curso Definitivo de HTML y CSS",
     teacher: "Diego de Granda",
 });
 
 const webDev = new LearningPath ({
-    id: 01,
+    id: 1,
     name: "Web Dev",
     courses: [
         "curso de HTML y CSS profesional",
@@ -147,7 +148,7 @@ const webDev = new LearningPath ({
 })
 
 const dataScience = new LearningPath ({
-    id: 02,
+    id: 2,
     name: "Data Science",
     courses: [
         "Curso de dataViz",
