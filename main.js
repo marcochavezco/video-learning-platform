@@ -12,7 +12,33 @@ Methods:
 -Add learning path
 -Delete learning path
 */
+function videoPlay(id) {
+    const videoURL = "https://wwww.yourdomain.com/" + id;
+    console.log("Playing video from" + videoPlay)
+}
 
+function videoStop(id) {
+    const videoURL = "https://wwww.yourdomain.com/" + id;
+    console.log("The video from url" + videoPlay + "stopped")
+}
+class PlatformClass {
+
+    constructor({
+        name,
+        videoID,
+    }) {
+        this.name = name;
+        this.videoID = videoID;
+    }
+
+    play() {
+        videoPlay(this.videoID);
+    }
+    
+    stop() {
+        videoStop(this.videoID);
+    }
+}
 
 class Course {
 
